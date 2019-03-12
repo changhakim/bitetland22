@@ -30,6 +30,7 @@ https://templatemo.com/tm-529-ramayana
     <link rel="stylesheet" href="${css}/customer/asset/fontawesome.css "/>
     <link rel="stylesheet" href="${css}/customer/asset/templatemo-style.css "/>
     <link rel="stylesheet" href="${css}/customer/asset/owl.css "/>
+    <link rel="stylesheet" href="${css}/global/global.css "/>
 
 
 
