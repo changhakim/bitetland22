@@ -111,7 +111,7 @@ section {
 	padding-right: 0px;
 }
 .main-banner .banner-content {
-	
+	background: url("/web/resources/img/main-banner.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 }
