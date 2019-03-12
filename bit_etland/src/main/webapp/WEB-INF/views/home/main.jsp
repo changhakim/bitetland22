@@ -11,7 +11,7 @@
 		<a href="#" id="cus_login">로그인</a>
 		</div>
 		<div class="main2 grid-item">
-		<h1>직원전용</h1><br />
+		<h1>직원용</h1><br />
 		<a href="#" id= "emp_register">사원등록</a><br />
 		<a href="#" id= "emp_access">접속승인</a>
 		</div>
