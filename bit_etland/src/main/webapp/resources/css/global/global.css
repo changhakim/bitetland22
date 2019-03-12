@@ -1,0 +1,183 @@
+@charset "UTF-8";
+/* *************레이아웃header,side-bar,navi-bar,footer,content******** */
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  
+  background-color: white;
+  grid-gap: 4px;
+  padding: 10px;
+  }
+.grid-container >div {
+  background-color: rgba(255, 255, 255, 0.8);
+  border : 1px solid aqua;
+  text-align: center;
+  padding: 50px 0;
+  font-size: 15px;
+  
+}
+#header{
+    grid-column-start: 1;
+    grid-column-end: 7;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-size:50px;
+    font-family: 'Cute Font', cursive;
+}
+
+#item3 {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+#side_bar {
+    grid-column-start: 1;
+    grid-column-end: 3;
+    display: grid;
+    grid-template-rows: 300px;
+    font-size: 20px;
+    font-family: 'Hi Melody', cursive;
+    
+}
+#content {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    font-size: 20px;
+    text-align: center;
+    
+    font-family: 'Cute Font', cursive;
+    
+/*font-family: 'Jua', sans-serif;
+font-family: 'Cute Font', cursive;
+font-family: 'East Sea Dokdo', cursive; 
+font-family: 'Hi Melody', cursive;
+*/
+    
+}
+#footer {
+    grid-column-start: 1;
+    grid-column-end: 7;
+}
+/* 홈메인==================== */
+.main1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+  font-family: 'Cute Font', cursive;
+}
+.main2 {
+  grid-column-start: 4;
+  grid-column-end: 7;
+  font-family: 'Cute Font', cursive;
+}
+
+/* 네비바===================== */
+
+#navi_bar {
+    
+    grid-column-start: 1;
+    grid-column-end: 7;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    font-family: 'Jua', sans-serif;
+    display: grid;
+  	grid-template-columns: auto;
+    
+
+    
+    
+}
+
+.new_navi_bar{
+	display: grid;
+  	grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto ;
+}
+.navi_info{
+	  grid-column-start: 13;
+  	  grid-column-end: 14;
+}
+/* 카테고리메인===================== */
+
+
+
+.catemain{
+      grid-column-start: 1;
+      grid-column-end: 7;
+      font-size: 20px;
+      font-family: 'Hi Melody', cursive;
+      display: grid;
+  	grid-template-columns: auto auto auto;
+    
+}
+#catecontent{
+	      grid-column-start: 1;
+      	  grid-column-end: 7;
+}
+
+/* 디테일 수정 =======*/
+.update{
+        display: grid;
+        grid-template-columns: auto auto ;
+        grid-column-start: 1;
+        grid-column-end: 7;
+        border : 1px solid aqua;
+        
+ }
+#update_btn1{
+              grid-column-start: 1;
+              grid-column-end: 3;
+              
+              height:20px;
+}
+#update_btn2{
+              grid-column-start: 3;
+              grid-column-end: 7;
+              
+              height:20px;  
+}
+#delete_btn{
+              grid-column-start: 3;
+              grid-column-end: 7;
+              
+              height:20px;  
+}
+.mypage{
+	display: grid;
+  	grid-template-columns: auto auto auto auto;
+  	grid-gap: 1px;
+  	background-color: white;
+  	padding: 50px;
+  	width: 600px;
+  	margin: auto;
+  	
+ 	
+ 	
+
+}
+.mypage1 {
+grid-column-start:1; 
+grid-column-end:2;
+border : 1px solid aqua;
+text-align: center;
+}
+.mypage2 {
+grid-column-start:2; 
+grid-column-end:5;
+border : 1px solid aqua;
+text-align: center;
+
+}
+.myphoto {
+	display: grid;
+  	grid-template-columns: auto auto auto auto;
+  	grid-gap: 1px;
+  	background-color: white;
+  	padding: 50px;
+  	width: 300px;
+  	margin: auto;
+	
+}
+.myphotoin{
+	grid-column-start:2; 
+	grid-column-end:4;
+}

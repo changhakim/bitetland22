@@ -39,4 +39,13 @@ public class HomeController {
 		return String.format("public:%s/%s.tiles",dir,page);
 	}
 	
+	@RequestMapping("/cusmove/{dir}/{page}")
+	public String cusmove(@PathVariable String dir,
+			@PathVariable String page) {
+		logger.info("\n --------- move to {} !! ----------",dir+"/"+page);
+		
+		return String.format("customer:%s/%s.tiles",dir,page);
+	}
+	
+	
 }

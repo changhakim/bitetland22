@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!--
 	@Author: 김창하 changha0321@gmail.com
-	@Date: 2019. 3. 12. 오전 11:59:17
+	@Date: 2019. 3. 12. 오후 3:59:17
 	@File Name: *.jsp
 	@Desc:
 	-->
@@ -17,7 +17,7 @@
               </div>
             </header>
 
-           <!-- Banner -->
+             <!-- Banner -->
             <section class="main-banner">
               <div class="container-fluid">
                 <div class="row">
@@ -50,34 +50,39 @@
                   <div class="col-md-12">
                     <img src="${img}/top-image.jpg" alt="">
                     <div class="down-content">
-                      
-     <div class="mypage">
-	<div class="mypage1">아이디</div>
-	<div class="mypage2" id="customerID">${user.customerID}</div>
-	<div class="mypage1">이름</div>
-	<div class="mypage2" id="customerName">${user.customerName}</div>
-	<div class="mypage1">생년월일</div>
-	<div class="mypage2" id="ssn">${user.ssn}</div>
-	<div class="mypage1">성별</div>
-	<div class="mypage2" id="gender">남</div>
-	<div class="mypage1">전화번호</div>
-	<div class="mypage2" id="phone">${user.phone}</div>
-	<div class="mypage1">주소</div>
-	<div class="mypage2" id="city">${user.city}</div>
-	<div class="mypage1">상세주소</div>
-	<div class="mypage2" id="address">${user.address}</div>
-	<div class="mypage1">우편번호</div>
-	<div class="mypage2" id="postalCode">${user.postalCode}</div>
+                      <div class="grid-item" id= "content">
+<form id="form">
+    <div class="mypage">
+    <div class="mypage1">아이디</div>
+    <div class="mypage2"><input type="text" id="customerID" name="customerID" value="${user.customerID}" readonly/></div>
+    <div class="mypage1">이름</div>
+    <div class="mypage2"><input type="text" id="customerName" name="customerName" value="${user.customerName}" readonly/></div>
+    <div class="mypage1">생년월일</div>
+    <div class="mypage2"><input type="text" id="ssn" name="ssn" value="${user.ssn}" readonly/></div>
+    <div class="mypage1">성별</div>
+    <div class="mypage2">남</div>
+    <div class="mypage1">전화번호</div>
+    <div class="mypage2"><input type="text" id="phone" name="phone" value="${user.phone}" /></div>
+    <div class="mypage1">주소</div>
+    <div class="mypage2"><input type="text" id="city" name="city" value="${user.city}" /></div>
+    <div class="mypage1">상세주소</div>
+    <div class="mypage2"><input type="text" id="address" name="address" value="${user.address}"/></div>
+    <div class="mypage1">우편번호</div>
+    <div class="mypage2"><input type="text" id="postalCode" name="postalCode" value="${user.postalCode}"/></div>
+    <div class="mypage1">임시비밀번호</div>
+    <div class="mypage2"><input type="text" id="password" name="password" value="${user.password}" /></div>
+  
 	</div>
-<div class="grid-item update_cus" >
-	<button type="button" id = "update_btn" class="btn btn-default btn-lg">
- 		<span class="glyphicon glyphicon-ok" aria-hidden="true"></span> 정보수정 
-	</button>
-	<button type="button" id = "cancel_btn" class="btn btn-default btn-lg">
-	 		<span class="glyphicon glyphicon-remove" aria-hidden="true"></span> 회원탈퇴
-	</button>
+</form>
+	<div class="grid-item update">
+		<div class= "update_btn1">
+		<span id="confirm_btn" class="label label-success" >확인</span>
+		</div >
+		<div class= "update_btn2">
+		<span id="cancel_btn" class="label label-danger" >취소</span>
+		</div>
 </div>
-                      
+</div>
                       <div class="primary-button">
                         <a href="#">Read More</a>
                       </div>
@@ -94,21 +99,13 @@
           </div>
         </div>
         <script>
-$('#update_btn').click(function(){
-	location.assign('${ctx}/cusmove/customer/update');
+$('#confirm_btn').attr('style','cursor:pointer').click(function(){
+	$('#form')
+	.attr('action','${ctx}/customer/update')
+	.attr('method','post')
+	.submit();
 });
-$('#delete_btn').click(function(){
-	location.assign('${ctx}/customer.do?'
-+'cmd=cust_remove&dir=home&page=main&customer_id=${cust.customerID}');
+$('#cancel_btn').click(function(){
+	alert('취소버튼 클릭');
 });
-$('#file_upload_btn')
-	.attr('style','cursor:pointer')
-	.attr('style',"width: 300px; margin-top:10px")
-	.click(function(){
-		$('#form')
-		.attr('method','post')
-		.attr('action','${ctx}/customer/filechange')
-		.attr('enctype','multipart/form-data')
-		.submit();
-});  
 </script>

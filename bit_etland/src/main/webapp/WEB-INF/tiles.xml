@@ -25,6 +25,20 @@
    <definition name="customer:*/*.tiles" extends="customer">
     <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
     </definition>
+    
+      
+      
+      
+      
+      <definition name="employee" template="/WEB-INF/views/layouts/employee.jsp">
+    
+    <put-attribute name="sidebar" value="/WEB-INF/views/customer/sidebar.jsp" />
+    <put-attribute name="content" value=""/>
+    
+ </definition>
+   <definition name="employee:*/*.tiles" extends="employee">
+    <put-attribute name="content" value="/WEB-INF/views/{1}/{2}.jsp" />
+    </definition>
 
 
 

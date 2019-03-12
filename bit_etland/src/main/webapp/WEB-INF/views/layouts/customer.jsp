@@ -12,9 +12,7 @@
     <div id="wrapper">
     <tiles:insertAttribute name="content" />
     <tiles:insertAttribute name="sidebar" />	
-
-
- </div>
+</div>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->

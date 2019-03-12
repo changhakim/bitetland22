@@ -42,7 +42,7 @@ $('#emp_access').click(function(){
 })
 
 $('#cus_join').click(function(){
-	location.assign('customer.do?cmd=move&page=signup');
+	location.assign('${ctx}/move/customer/signup');
 });
 $('#cus_login').click(function(){
 	location.assign('${ctx}/move/customer/signin');

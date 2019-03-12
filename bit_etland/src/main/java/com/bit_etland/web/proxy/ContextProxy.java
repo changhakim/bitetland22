@@ -25,5 +25,6 @@ public class ContextProxy {
 		session.setAttribute("font", ctx + "/resources/font");
 		session.setAttribute("img", ctx + "/resources/img");
 		session.setAttribute("time",new SimpleDateFormat("yyyy년 MM월 dd일 hh:mm").format(new Date()));
+		System.out.println(ctx+"ctx값");
 	}
 }
