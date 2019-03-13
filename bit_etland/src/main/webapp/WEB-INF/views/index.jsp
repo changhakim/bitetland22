@@ -60,6 +60,6 @@ https://templatemo.com/tm-529-ramayana
     <script src="${js}/customer/asset/custom.js"></script>	
 </body>
 <script>
-app.context.init('${ctx}')
+app.path.init('${ctx}')
 </script>
 </html>
