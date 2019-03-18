@@ -29,7 +29,7 @@ public class HomeController {
 			HttpServletRequest request) {
 		logger.info("\n --------- Welcome {} !! ----------","Home");
 		pxy.setContext();
-		return "index.jsp";
+		return "algorithm.jsp";
 	}
 	@RequestMapping("/move/{dir}/{page}")
 	public String move(@PathVariable String dir,

@@ -43,8 +43,14 @@ https://templatemo.com/tm-529-ramayana
 <body class="is-preload">
     <!-- Wrapper -->
     <div id="wrapper">
-<div id="content"></div>
-<div id="sidebar"></div>
+
+<div id="main">
+</div>
+
+
+<div id="sidebar">
+</div>
+
 
 </div>
 
@@ -58,6 +64,7 @@ https://templatemo.com/tm-529-ramayana
     <script src="${js}/customer/asset/transition.js"></script>
     <script src="${js}/customer/asset/owl-carousel.js"></script>
     <script src="${js}/customer/asset/custom.js"></script>	
+
 </body>
 <script>
 app.path.init('${ctx}')

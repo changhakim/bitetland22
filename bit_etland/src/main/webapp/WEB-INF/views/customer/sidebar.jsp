@@ -8,7 +8,7 @@
 	
 	
 	    <!-- Sidebar -->
-        <div id="sidebar">
+        
 
           <div class="inner">
 
@@ -79,4 +79,4 @@
             </footer>
 
           </div>
-        </div>
+        
