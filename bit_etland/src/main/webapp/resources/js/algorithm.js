@@ -11,51 +11,37 @@ algo=(()=>{
 	let setContentView=()=>{
 		$.getScript($.js()+'/compo.js',()=>{
 			//$('body').html($$.div({id:'test',clazz:'clazz'}))
-			$('#nav').children().eq(0).html($$.a({id:'seq',url:'#'}).text('수열'));
-			$('#nav').children().eq(1).html($$.a({id:'math',url:'#'}).text('수학'));
-			$('#nav').children().eq(2).html($$.a({id:'sort',url:'#'}).text('정렬'));
-			$('#nav').children().eq(3).html($$.a({id:'arr',url:'#'}).text('배열'));
-			$('#nav').append($$.li({id:''})).
-			children().eq(4).html($$.a({id: 'app'}).text('응용'));
-			$('#que_1').html($$.h({no:'2',id:'h'}).text('등차수열의 합계 '));
+			nav();
+			remove();
+			question();
+			$('#right_content').prepend($$.div({id:'right_start'}));
+			$('#leave_a_comment').before('<div id="right_end"/>')
+			$('#right_start').nextUntil('#right_end').wrapAll('<div id="new_div"></div>');
+			var str = $('#new_div').html();
 			
-			inputForm('공차');
-			/*$('#an1').html($$.form({id:'form'}));
-			$('#form').html($$.div({id:'div_1'})).addClass('form-group');
-			$('#div_1').html($$.label({name:'lab_1'}).text('시작값'))
-							.append($$.input({id:'start',type:'text'}));
-			$('#form').html($$.div({id:'div_2'})).addClass('form-group');
-			$('#div_2').html($$.label({name:'lab_2'}).text('종료값'))
-							.append($$.input({id:'end',type:'text'}));
-			$('#form').html($$.div({id:'div_3'})).addClass('form-group');
-			$('#div_3').html($$.label({name:'lab_3'}).text('증가값'))
-							.append($$.input({id:'diff',type:'text'}));*/
+			let arr =[
+					{id:'a',val:'등차수열'},
+					{id:'b',val:'등비수열'},
+					{id:'c',val:'팩토리얼수열'},
+					{id:'d',val:'피보나치수열'}
+			];
 			
 			
-			$('#que_2').html($$.h({no:'2',id:'h'}).text('등비수열의 합계'));
-			$('#answer_btn_1').text('결과').addClass('cursor').click(()=>{
-			
-				$.ajax({
-					url :$.ctx()+'/algo/seq/1',
-				    type:'post',
-				    datatype:'json',
-				    data: JSON.stringify({start:$('#start').val(),end:$('#end').val(),diff:$('#diff').val()}),
-				    contentType :"application/json",
-				    success:d=>{
-				    	alert('넘어온문제번호:'+d.result)
-				    	$('#an1').html($$.h({id:'h_res',no:'2'}).text('결과값:'+d.result));  
-				    },
-				    error:e=>{
-				    	alert('AJAX실패');
-				    }
-				  })
-				  
+			$.each(arr,(i,j)=>{
 				
-			})
+				$('#right_start').append(str);
+				$('#question').attr('id','question_'+j.id);
+				$('#question_'+j.id).text(j.val)
+					
 				
-				$('#answer_btn_2').text('리셋').addClass('cursor').click(()=>{
-					inputForm();
-					})
+				
+				
+				
+				
+			});
+			
+				
+				
 		})
 	};
 	let inputForm =x=>{
@@ -63,10 +49,54 @@ algo=(()=>{
 				.append($$.input({type:'text',id:'start'})).append('<br />')
 				.append($$.lavel({name:'end'}).text('마지막')).append('<br />')
 				.append($$.input({type:'text',id:'end'})).append('<br />')
-				.append($$.lavel({name:'end'}).text(x)))
+				.append($$.lavel({name:'end'}).text('공차')))
 				.append($$.input({type:'text',id:'diff'})
 				);
 	  
+	};
+	let question =()=>{
+		$('#question').html($$.h({no:'2',id:'h'}).text());
+		inputForm();
+		$('#answer_btn_1').text('결과').addClass('cursor').click(()=>{
+		
+			$.ajax({
+				url :$.ctx()+'/algo/seq/1',
+			    type:'post',
+			    datatype:'json',
+			    data: JSON.stringify({start:$('#start').val(),end:$('#end').val(),diff:$('#diff').val()}),
+			    contentType :"application/json",
+			    success:d=>{
+			    	alert('넘어온문제번호:'+d.result)
+			    	$('#an1').html($$.h({id:'h_res',no:'2'}).text('결과값:'+d.result));  
+			    },
+			    error:e=>{
+			    	alert('AJAX실패');
+			    }
+			  })
+			  
+			
+		})
+		reset();
+			
+	};
+	let nav=()=>{
+		$('#nav').children().eq(0).html($$.a({id:'seq',url:'#'}).text('수열'));
+		$('#nav').children().eq(1).html($$.a({id:'math',url:'#'}).text('수학'));
+		$('#nav').children().eq(2).html($$.a({id:'sort',url:'#'}).text('정렬'));
+		$('#nav').children().eq(3).html($$.a({id:'arr',url:'#'}).text('배열'));
+		$('#nav').append($$.li({id:''})).
+		children().eq(4).html($$.a({id: 'app'}).text('응용'));
+	};
+	let remove=()=>{
+		
+		$('#rm_start').before('<div id="del_start"/>')
+		$('#rm_end').after('<div id="del_end"/>')
+		$('#del_start').nextUntil('#del_end').wrap().remove();
+	};
+	let reset=()=>{
+		$('#answer_btn_2').text('리셋').addClass('cursor').click(()=>{
+			inputForm();
+			})
 	}
 	return{init:init,
 		onCreate:onCreate};
