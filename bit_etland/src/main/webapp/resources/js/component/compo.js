@@ -1,27 +1,30 @@
 var $$ = $$||{};
 
 $$={
+		
 		div:x=>{
 			return $('<div id='+x.id+'/>');
 		},
 		a:x=>{
 			return $('<a href="'+x.url+'"id='+x.id+'/>');
 		},
-		li : x=>{
-			
+		li:x=>{
 			return $('<li id='+x.id+'class='+x.clazz+'/>');
 		},
 		h : x=>{
-			return $('<h'+x.no+' id="'+x.id+'"/>');
+			return $('<h'+x.no+' id='+x.id+'/>');
 		},
-		form : x=>{
-			return $('<form/>');
+		form:x=>{
+			return $('<form id='+x.id+'/>')
 		},
-		lavel :x=>{
-			return $('<label for='+x.name+'/>');
+		label:x=>{
+			return $('<label id='+x.lavel+'/>')
 		},
-		input :x=>{
-			return $('<input type="'+x.type+'"id="'+x.id+'"/>')
+		input:x=>{
+			return $('<input type='+x.text+' id='+x.id+' >')
 		}
 		
-}
+				
+		
+		
+};
